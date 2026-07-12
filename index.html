@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Cv Sarana Hijau</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .service-item {
+      max-width: 350px;
+      /* Silakan ubah angka ini sesuai selera Anda (misal 300px atau 350px) */
+      margin: 0 auto 30px auto;
+      /* Membuat card berada di tengah dan memberi jarak bawah */
+      height: calc(100% - 30px);
+      /* Agar tinggi card sejajar di setiap baris */
+      padding: 30px;
+      text-align: center;
+    }
+
+    /* Mengatur ukuran dan warna icon Bootstrap agar sama seperti SVG sebelumnya */
+    .service-item-icon i {
+      font-size: 64px;
+      color: var(--accent-color);
+      /* Mengikuti warna hijau tema Anda */
+      line-height: 1;
+    }
+
+    /* --- Client Logo Marquee Animation --- */
+    .marquee-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .logo-marquee {
+      flex-shrink: 0;
+      animation: scroll-marquee 30s linear infinite;
+    }
+
+    /* Mengubah gambar logo menjadi sedikit abu-abu (grayscale) agar menyatu dengan tema elegan */
+    .logo-marquee img {
+      filter: grayscale(100%) opacity(70%);
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Logo akan berwarna penuh ketika disorot mouse */
+    .logo-marquee img:hover {
+      filter: grayscale(0%) opacity(100%);
+    }
+
+    /* Keyframes untuk menggerakkan elemen secara terus menerus */
+    @keyframes scroll-marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Opsional: Membuat animasi berhenti sejenak jika pengguna menaruh kursor di atasnya */
+    .marquee-wrapper:hover .logo-marquee {
+      animation-play-state: paused;
+    }
+
+    /* --- Efek Gambar 3D Melayang --- */
+    .image-3d-effect {
+      /* Memberikan bingkai putih halus agar gambar lebih menonjol */
+      border: 5px solid #ffffff;
+      /* Bayangan awal (halus) */
+      box-shadow: 0 10px 30px rgba(17, 101, 48, 0.15);
+      /* Membuat animasi pergerakan menjadi mulus */
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Efek ketika kursor diarahkan ke gambar (Hover) */
+    .image-3d-effect:hover {
+      /* Gambar melayang ke atas sebesar 15px dan membesar 3% */
+      transform: translateY(-15px) scale(1.03);
+
+      /* Bayangan menjadi lebih gelap dan lebar, menciptakan ilusi jarak/3D */
+      box-shadow: 0 25px 50px rgba(17, 101, 48, 0.3);
+    }
+
+    /* --- Tampilan Section Statistik Bergaya Kartu (Sesuai Desain Gambar) --- */
+    .statistics-section {
+      /* Latar belakang terbagi dua: Atas abu-abu kehijauan (45%), Bawah putih/abu-abu terang (45% ke bawah) */
+      background: linear-gradient(to bottom, #65847b 45%, #f7f9fa 45%);
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .stats-card {
+      background-color: #ffffff;
+      border-radius: 25px;
+      /* Sudut melengkung yang cukup membulat */
+      padding: 60px 30px;
+      /* Bayangan lembut dan lebar agar kartu terlihat melayang jauh dari latar belakang */
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05);
+    }
+
+    .stats-card .stat-item h2 {
+      /* Warna hijau 'Teal' yang cerah dan tebal menyesuaikan tombol di menu Anda */
+      color: #179373;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .stats-card .stat-item p {
+      /* Warna teks keterangan yang agak redup (Muted Grey/Blue) */
+      color: #7d8b96;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    /* Responsivitas di layar HP (Memberi jarak antar item jika bertumpuk ke bawah) */
+    @media (max-width: 768px) {
+      .stats-card {
+        padding: 40px 20px;
+      }
+
+      .stats-card .stat-item {
+        margin-bottom: 30px;
+      }
+
+      .stats-card .col-lg-3:last-child .stat-item {
+        margin-bottom: 0;
+        /* Menghilangkan margin pada elemen terakhir di HP */
+      }
+    }
+
+    /* --- Penyesuaian Card Kegiatan/Berita --- */
+
+    /* Memastikan semua card memiliki tinggi yang sama dan konten di dalamnya terdistribusi rata */
+    .recent-posts .post-item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      /* Memenuhi tinggi kolom Bootstrap */
+      max-width: 400px;
+      /* Lebar maksimal card, sesuaikan jika perlu */
+      margin: 0 auto;
+      /* Menengahkan card di dalam kolom */
+    }
+
+    /* Membatasi tinggi penampung gambar agar proporsional */
+    .recent-posts .post-item .post-img {
+      height: 250px;
+      /* Atur tinggi tetap untuk area gambar */
+      width: 100%;
+      display: flex;
+      align-items: center;
+      /* Menengahkan gambar secara vertikal */
+      justify-content: center;
+      /* Menengahkan gambar secara horizontal */
+      background-color: #f8f9fa;
+      /* Latar belakang abu-abu sangat muda jika gambar tidak memenuhi ruang */
+    }
+
+    /* Memastikan gambar tampil penuh tanpa terpotong (contain) */
+    .recent-posts .post-item .post-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* KUNCI: Menampilkan seluruh gambar tanpa terpotong */
+      transition: transform 0.5s ease;
+    }
+
+    /* Mendorong tombol 'Read More' ke bagian paling bawah card */
+    .recent-posts .post-item .post-content {
+      flex-grow: 1;
+      /* Membiarkan area teks mengambil sisa ruang yang ada */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .recent-posts .post-item .readmore {
+      margin-top: auto;
+      /* Mendorong tombol ke bawah */
+    }
+
+    /* (Opsional) Memperkecil efek zoom saat di-hover agar gambar contain tidak terlihat aneh */
+    .recent-posts .post-item:hover .post-img img {
+      transform: scale(1.05);
+    }
+
+    /* Membatasi teks judul maksimal 2 baris */
+    .recent-posts .post-item .post-title {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      /* Silakan ubah angka ini jika ingin 3 baris */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      /* Opsional: Tentukan tinggi baris agar rapi */
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="sarana-hijau">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Beranda</a></li>
+          <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="about.html">Profil Perusahaan</a></li>
+              <li><a href="dokumen.html">Penghargaan/Dokumen</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Layanan kami</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>Toko Benih</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://www.benihperkebunanols.com" target="_blank">Toko Benih OLS</a></li>
+                  <li><a href="http://www.belibenihbun.com" target="_blank">Toko Benihbun</a></li>
+                </ul>
+              </li>
+              <li><a href="services.html">Produk</a></li>
+              <li><a href="jasa.html">Jasa</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Berita</a></li>
+          <li><a href="contact.html">Kontak kami</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="assets/img/hero_1.jpg" alt="">
+          <div class="carousel-container">
+            <h2>Farming is the best solution of worlds starvation</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="assets/img/hero_2.jpg" alt="">
+          <div class="carousel-container">
+            <h2>Organic vegetables is good for health</h2>
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+              placeat facere possimus.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="assets/img/hero_3.jpg" alt="">
+          <div class="carousel-container">
+            <h2>Providing Fresh Produce Every Single Day</h2>
+            <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+              fugit.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="assets/img/hero_4.jpg" alt="">
+          <div class="carousel-container">
+            <h2>Farming as a Passione</h2>
+            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
+              non numquam eius.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="assets/img/hero_5.jpg" alt="">
+          <div class="carousel-container">
+            <h2>Good Food For All</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section>
+
+    <!-- /Hero Section -->
+    <!-- About 3 Section -->
+    <section id="about-3" class="about-3 section">
+      <div class="container">
+        <div class="row gy-4 justify-content-between align-items-center">
+
+          <!-- Kolom Gambar dan Tombol Play -->
+          <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+            <img src="assets/vid/inovasi.png" alt="Image" class="img-fluid rounded image-3d-effect">
+            <!-- Tautan memicu Modal Bootstrap -->
+            <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#mp4VideoModal"
+              class="pulsating-play-btn">
+              <span class="play"><i class="bi bi-play-fill"></i></span>
+            </a>
+          </div>
+
+          <!-- Kolom Teks Penjelasan Perusahaan -->
+          <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="content-title mb-4">CV Sarana Hijau</h2>
+            <p class="mb-4">
+              Kami hadir sebagai mitra strategis dalam memberikan solusi terbaik untuk perkebunan modern dan
+              berkelanjutan.
+            </p>
+            <ul class="list-unstyled list-check">
+              <li>Mengelola perkebunan secara profesional dan inovasi</li>
+              <li>Berfokus pada standar kualitas yang konsisten</li>
+              <li>Memanfaatkan teknologi untuk efisiensi produksi</li>
+            </ul>
+
+            <p><a
+                href="https://wa.me/628197959415?text=Halo%2C%20selamat%20siang.%20Saya%20tertarik%20untuk%20membeli%20bibit.%20Apakah%20bibitnya%20masih%20tersedia,%20Terima%20kasih."
+                target="_blank" class="btn-cta"><i class="bi bi-whatsapp"></i> Hubungi Kami</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About 3 Section -->
+
+    <!-- Modal untuk Video MP4 -->
+    <div class="modal fade" id="mp4VideoModal" tabindex="-1" aria-labelledby="mp4VideoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- Header Modal -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="mp4VideoModalLabel">Video Profil Perusahaan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Body Modal (Tempat Video MP4) -->
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <!-- Tag video HTML5 untuk memutar file .mp4 -->
+              <video id="companyVideo" controls>
+                <!-- Ubah src ke lokasi file mp4 Anda, misal: assets/video/profil.mp4 -->
+                <source src="assets/vid/Inovasi.mp4" type="video/mp4">
+                Maaf, browser Anda tidak mendukung pemutaran video ini.
+              </video>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h1>Produk Dan Layanan</h1>
+      </div><!-- End Section Title -->
+      <div class="content">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">01</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-shop"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Pasar Bibit Benih</h3>
+                  <p>Menyediakan berbagai bibit dan benih tanaman berkualitas tinggi untuk kebutuhan pertanian
+                    modern.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">02</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-easel"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Pelatihan</h3>
+                  <p>Program edukasi dan pelatihan praktik pertanian terbaik untuk meningkatkan hasil panen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">03</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Sarana dan Prasarana</h3>
+                  <p>Penyediaan infrastruktur dan alat bantu pertanian yang memadai dan tepat guna.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">04</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Trading</h3>
+                  <p>Memfasilitasi perdagangan hasil bumi dan komoditas pertanian dengan harga bersaing.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">05</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-truck"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Logistik</h3>
+                  <p>Layanan distribusi dan pengiriman hasil panen secara cepat untuk menjaga kesegaran
+                    produk.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">06</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-tree"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Pengembangan Pembibitan</h3>
+                  <p>Riset dan inovasi untuk mengembangkan varietas bibit unggul yang tahan penyakit.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">07</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-people"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Kerjasama Perbenihan</h3>
+                  <p>Membangun kemitraan strategis dalam produksi dan distribusi benih antar kelompok tani.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="service-item w-100">
+                <span class="number">08</span>
+                <div class="service-item-icon">
+                  <i class="bi bi-briefcase"></i>
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Konsultan Koperasi</h3>
+                  <p>Menyediakan layanan konsultansi terkait pembentukan, legalitas, dan pendampingan
+                    koperasi.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+    <!-- Statistics Section -->
+    <section id="statistics" class="statistics-section">
+      <div class="container">
+
+        <!-- Kartu Statistik -->
+        <div class="stats-card" data-aos="fade-up">
+          <div class="row text-center align-items-center">
+
+            <!-- Stat 1 -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <div class="stat-item">
+                <h2 class="fw-bold text-dark"><span class="count-up" data-target="250">0</span>+</h2>
+                <p>Produk</p>
+              </div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <div class="stat-item">
+                <h2 class="fw-bold text-dark"><span class="count-up" data-target="50">0</span></h2>
+                <p>Klien & kerja sama</p>
+              </div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <div class="stat-item">
+                <h2 class="fw-bold text-dark"><span class="count-up" data-target="1200">0</span>+</h2>
+                <p> Bibit Unggul</p>
+              </div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-item">
+                <h2 class="fw-bold text-dark"><span class="count-up" data-target="10">0</span>+</h2>
+                <p>Tahun Pengalaman</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Kartu Statistik -->
+
+      </div>
+    </section>
+    <!-- /Statistics Section -->
+    <section id="clients" class="clients section py-5" style="background-color: var(--surface-color);">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Klien dan Kerja Sama</h2>
+        <h5>Mitra terpercaya yang telah tumbuh dan berkembang bersama kami</h5>
+      </div>
+      <div class="container-fluid overflow-hidden">
+
+        <div class="marquee-wrapper d-flex w-100">
+
+          <div class="marquee d-flex gap-5 align-items-center logo-marquee px-4">
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/IBM.png" height="44" alt=""
+                loading="eager" title="IBM"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/SAP.png" height="44" alt=""
+                loading="eager" title="SAP"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/shopify.png" height="44"
+                alt="" loading="eager" title="Shopify"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/cloudflare.png" height="44"
+                alt="" loading="eager" title="Cloudflare"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/uber.png" height="44" alt=""
+                loading="eager" title="Uber"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/microsoft.png" height="44"
+                alt="" loading="eager" title="Microsoft"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/google.png" height="44"
+                alt="" loading="eager" title="Google"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/amazon.png" height="44"
+                alt="" loading="eager" title="Amazon"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/salesforce.png" height="44"
+                alt="" loading="eager" title="Salesforce"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/adobe.png" height="44" alt=""
+                loading="eager" title="Adobe"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/linkedin.png" height="44"
+                alt="" loading="eager" title="LinkedIn"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/MIT.png" height="44" alt=""
+                loading="eager" title="MIT"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/georgia.png" height="44"
+                alt="" loading="eager" title="UGA"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/mcgill.png" height="44"
+                alt="" loading="eager" title="McGill"></div>
+          </div>
+
+          <div aria-hidden="true" class="marquee d-flex gap-5 align-items-center logo-marquee px-4">
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/IBM.png" height="44" alt=""
+                loading="eager" title="IBM"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/SAP.png" height="44" alt=""
+                loading="eager" title="SAP"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/shopify.png" height="44"
+                alt="" loading="eager" title="Shopify"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/cloudflare.png" height="44"
+                alt="" loading="eager" title="Cloudflare"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/uber.png" height="44" alt=""
+                loading="eager" title="Uber"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/microsoft.png" height="44"
+                alt="" loading="eager" title="Microsoft"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/google.png" height="44"
+                alt="" loading="eager" title="Google"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/amazon.png" height="44"
+                alt="" loading="eager" title="Amazon"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/salesforce.png" height="44"
+                alt="" loading="eager" title="Salesforce"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/adobe.png" height="44" alt=""
+                loading="eager" title="Adobe"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/linkedin.png" height="44"
+                alt="" loading="eager" title="LinkedIn"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/MIT.png" height="44" alt=""
+                loading="eager" title="MIT"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/georgia.png" height="44"
+                alt="" loading="eager" title="UGA"></div>
+            <div><img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/mcgill.png" height="44"
+                alt="" loading="eager" title="McGill"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section id="why-us" class="why-us section py-5 bg-dark"
+      style="background: linear-gradient(135deg, #18cf27 0%, #ffffff 50%) !important; border-radius: 30px; margin: 40px 15px; box-shadow: 0 10px 40px rgba(17, 101, 48, 0.08);">
+      <div class="container">
+        <div class="row gy-5 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/why.png" class="img-fluid rounded image-3d-effect" alt="Ilustrasi Pertanian Modern">
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="section-title text-start pb-4" data-aos="fade-up">
+              <h2>Kenapa Memilih Kami?</h2>
+              <p>Keunggulan yang menjadikan kami mitra terbaik untuk masa depan pertanian dan bisnis Anda.</p>
+            </div>
+
+            <div class="features-list">
+
+              <div class="d-flex mb-4">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-award-fill" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                </div>
+                <div class="ms-4">
+                  <h4 class="mb-2" style="color: var(--heading-color); font-weight: 600;">Kualitas Terjamin</h4>
+                  <p style="color: var(--default-color);">Kami memastikan setiap produk, benih, dan layanan melewati
+                    standar kontrol kualitas yang ketat untuk hasil maksimal.</p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-4">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-cpu-fill" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                </div>
+                <div class="ms-4">
+                  <h4 class="mb-2" style="color: var(--heading-color); font-weight: 600;">Inovasi Berkelanjutan</h4>
+                  <p style="color: var(--default-color);">Mengintegrasikan teknologi terkini dan metode <em>smart
+                      farming</em> untuk efisiensi produksi dan pelestarian lingkungan.</p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-4">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-headset" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                </div>
+                <div class="ms-4">
+                  <h4 class="mb-2" style="color: var(--heading-color); font-weight: 600;">Dukungan Penuh & Profesional
+                  </h4>
+                  <p style="color: var(--default-color);">Tim ahli kami siap memberikan pendampingan, konsultasi, dan
+                    solusi nyata dari hulu hingga hilir.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kegiatan / Berita</h2>
+        <h6>Kegiatan Terbaru kami</h6>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/blog/1.png" class="img-fluid" alt="">
+                <span class="post-date">December 12</span>
+              </div>
+
+              <div class="post-content d-flex flex-column" style="flex-grow: 1;">
+                <h3 class="post-title">KERJASAMA TERKAIT PROGRAM PEMERINTAH UNTUK PANGAN , BENIH PADI DAN JAGUNG</h3>
+
+                <div class="meta d-flex align-items-center mb-auto"> <span class="px-3 text-black-50"></span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Kerja sama</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="blog-details.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/blog/2.png" class="img-fluid" alt="">
+                <span class="post-date">July 17</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">KUNJUNGAN KE PRODUSEN KELAPA DALAM
+                  DI PANGANDARAN JAWA BARAT TERKAIT PERBENIHAN</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                  </div>
+                  <span class="px-3 text-black-50"></span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Kunjungan</span>
+                  </div>
+                </div>
+                <hr>
+
+                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+                    class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/blog/5.png" class="img-fluid" alt="">
+                <span class="post-date">September 05</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">KUNJUNGAN KE PEMBIBITAN PALA DI LAMPUNG DENGAN
+                  PENANGKAR PAK EDI SAPWANTO DARI PERWAKILAN
+                  PERUSAHAAN SNV INDONESIA BOGOR</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                  </div>
+                  <span class="px-3 text-black-50"></span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Kunjungan</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+                    class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Recent Posts Section -->
+
+  </main>
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">C.V Sarana Hijau</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Jl. Jakarta No. 123 Ragunan</p>
+              <p>Jakarta Selatan, 535022</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+62 819-7959-415</span></p>
+              <p><strong>Email:</strong> <span>saranaHijau@gmail.com</span></p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Toko Kami</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://www.benihperkebunanols.com" target="_blank">Benih
+                  Perkebunan</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="http://www.belibenihbun.com" target="_blank">Benuhbun</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-3 footer-links">
+            <h4>Tautan Cepat</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="index.html">Beranda</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about-3">Tentang Perusahaan</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services">Produk & Layanan</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#recent-posts">Berita & Kegiatan</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12">
+            <h4>Lokasi Kami</h4>
+            <div class="map-container rounded overflow-hidden mt-3" style="box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3103.426965034792!2d106.8030427!3d-6.29302658!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1e4f62c0bf5%3A0xd3e1c01edc3f6d5!2sSovereign%20Plaza%2C%20RT.1%2FRW.2%2C%20Cilandak%20Bar.%2C%20Kec.%20Cilandak%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012430!5e1!3m2!1sid!2sid!4v1783855233046!5m2!1sid!2sid"
+                width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <div
+        class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>C.V Sarana Hijau</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+          </div>
+        </div>
+
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Script tambahan agar video berhenti saat Modal ditutup -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var videoModal = document.getElementById('mp4VideoModal');
+      var videoElement = document.getElementById('companyVideo');
+
+      // Mendengarkan event ketika modal Bootstrap selesai ditutup
+      videoModal.addEventListener('hidden.bs.modal', function () {
+        videoElement.pause(); // Jeda video
+        videoElement.currentTime = 0; // Opsional: kembalikan video ke awal
+      });
+    });
+  </script>
+  <!-- Script Animasi Count Up -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const animationDuration = 2000; // Durasi animasi dalam milidetik (2000ms = 2 detik)
+
+      // Fungsi untuk menjalankan animasi hitung
+      const animateCountUp = (el) => {
+        const target = parseInt(el.getAttribute("data-target"));
+        const startTime = performance.now();
+
+        const updateCount = (currentTime) => {
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / animationDuration, 1);
+
+          // Easing: membuat animasi melambat secara elegan saat mendekati angka akhir
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+
+          const currentCount = Math.floor(easeOutQuart * target);
+          el.innerText = currentCount;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.innerText = target; // Memastikan angka akhir pas dengan target
+          }
+        };
+
+        requestAnimationFrame(updateCount);
+      };
+
+      // Observer untuk mendeteksi kapan section statistik muncul di layar
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Cari semua elemen dengan class 'count-up' di dalam section ini
+            const counters = entry.target.querySelectorAll(".count-up");
+            counters.forEach(counter => animateCountUp(counter));
+
+            // Hentikan observer agar animasi tidak berulang saat di-scroll naik-turun
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 }); // threshold 0.5 berarti animasi mulai saat 50% section terlihat
+
+      // Terapkan observer ke section statistik
+      const statsSection = document.querySelector(".statistics-section");
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Cari semua elemen dengan class post-title
+      const titles = document.querySelectorAll('.post-title');
+      const maxLength = 100; // Batas maksimal karakter
+
+      titles.forEach(title => {
+        const text = title.innerText;
+
+        // Jika teks lebih panjang dari batas maksimal
+        if (text.length > maxLength) {
+          // Potong teks dari awal (0) sampai batas maksimal, lalu tambah kata
+          title.innerText = text.substring(0, maxLength) + '.. selengkapnya';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
