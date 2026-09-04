@@ -1,58 +1,42 @@
-/**
-* Template Name: AgriCulture
-* Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
 :root {
-  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Marcellus",  sans-serif;
-  --nav-font: "Marcellus",  sans-serif;
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Marcellus", sans-serif;
+  --nav-font: "Marcellus", sans-serif;
 }
 
-/* Global Colors - Dimodifikasi untuk Tema Hijau */
-:root { 
-  --background-color: #f2fcf5; /* Latar belakang utama bernuansa hijau pucat */
-  --default-color: #1a4d2e; /* Teks biasa menggunakan warna hijau gelap agar tetap terbaca */
-  --heading-color: #0f3d20; /* Judul (heading) menggunakan warna hijau pekat */
-  --accent-color: #2ea359; /* Hijau terang untuk menonjolkan tombol dan tautan */
-  --surface-color: #e6f7eb; /* Warna latar belakang hijau muda untuk kartu atau kotak (surface) */
-  --contrast-color: #ffffff; /* Warna putih untuk teks di atas warna aksen */
-}
-
-/* Nav Menu Colors - Dimodifikasi untuk Tema Hijau */
+/* Global Colors - Tema Hijau & Biru Aqua */
 :root {
-  --nav-color: #1a4d2e;  /* Warna teks navigasi utama */
-  --nav-hover-color: #2ea359; /* Warna teks saat menu disorot (hover) */
-  --nav-mobile-background-color: #f2fcf5; /* Warna latar menu di tampilan mobile */
-  --nav-dropdown-background-color: #e6f7eb; /* Warna latar menu dropdown */
-  --nav-dropdown-color: #1a4d2e; /* Warna teks di dalam menu dropdown */
-  --nav-dropdown-hover-color: #2ea359; /* Warna teks saat item dropdown disorot */
+  --background-color: #f0fbf8; /* Hijau air sangat pucat */
+  --default-color: #115e59; /* Hijau teal gelap untuk teks */
+  --heading-color: #042f2e; /* Hijau sangat gelap untuk judul */
+  --accent-color: #00bcd4; /* Biru aqua cerah sebagai aksen */
+  --surface-color: #e0f7fa; /* Biru aqua muda untuk permukaan/kartu */
+  --contrast-color: #ffffff;
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+:root {
+  --nav-color: #115e59;
+  --nav-hover-color: #00bcd4;
+  --nav-mobile-background-color: #f0fbf8;
+  --nav-dropdown-background-color: #e0f7fa;
+  --nav-dropdown-color: #115e59;
+  --nav-dropdown-hover-color: #00bcd4;
+}
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #f7fdfb;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
+  --background-color: #022c22; /* Hijau rimba sangat gelap */
+  --default-color: #e2e8f0; /* Abu-abu kebiruan terang untuk teks */
   --heading-color: #ffffff;
-  --accent-color: #2ea359;
-  --surface-color: #252525;
+  --accent-color: #00e5ff; /* Biru aqua neon untuk kontras di mode gelap */
+  --surface-color: #064e3b; /* Hijau gelap untuk kartu/permukaan */
   --contrast-color: #ffffff;
 }
-
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
