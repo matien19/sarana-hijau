@@ -27,7 +27,6 @@
 
   <style>
     /* HERO */
-    /* --- Pengaturan Awal (Sebelum Animasi) --- */
     .hero-anim-bg {
       opacity: 0;
       transition: opacity 1.5s ease-out;
@@ -45,7 +44,6 @@
       transition: transform 1.5s ease-out, opacity 1.5s ease-out;
     }
 
-    /* --- Pengaturan Akhir (Setelah Class 'is-animated' ditambahkan) --- */
     .is-animated .hero-anim-bg {
       opacity: 1;
     }
@@ -251,13 +249,6 @@
           <li class="dropdown"><a href="#"><span>Layanan kami</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li class="dropdown"><a href="#"><span>Toko Benih</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://www.benihperkebunanols.com" target="_blank">Toko Benih OLS</a></li>
-                  <li><a href="http://www.belibenihbun.com" target="_blank">Toko Benihbun</a></li>
-                </ul>
-              </li>
               <li><a href="services.html">Produk</a></li>
               <li><a href="jasa.html">Jasa</a></li>
             </ul>
@@ -338,7 +329,7 @@
             </div>
 
             <p>
-              <a href="https://wa.me/628197959415?text=Halo%2C%20selamat%20siang.%20Saya%20tertarik%20untuk%20membeli%20bibit.%20Apakah%20bibitnya%20masih%20tersedia,%20Terima%20kasih."
+              <a href="https://wa.me/6281231900339?text=Halo%2C%20selamat%20siang.%20Saya%20tertarik%20untuk%20membeli%20bibit.%20Apakah%20bibitnya%20masih%20tersedia,%20Terima%20kasih."
                 target="_blank" class="btn btn-success btn-cta shadow-sm px-4 py-2" style="border-radius: 50px;">
                 <i class="bi bi-whatsapp me-2"></i> Hubungi Kami
               </a>
@@ -582,7 +573,8 @@
           <!-- Kolom Gambar Agribisnis HD (Mentok Kiri, Tanpa Shadow/3D, Lengkungan di Pojok Kanan Atas) -->
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
             <div class="position-relative w-100">
-              <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              <img
+                src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 class="img-fluid w-100" alt="Pertanian dan Agribisnis Modern HD"
                 style="object-fit: cover; height: 500px; border-radius: 0 180px 0 0; display: block;">
             </div>
@@ -792,7 +784,7 @@
             <div class="footer-contact pt-3">
               <p>Jl. Jakarta No. 123 Ragunan</p>
               <p>Jakarta Selatan, 535022</p>
-              <p class=""><strong>Admin 1  :</strong> <span>0812-3190-0339</span></p>
+              <p class=""><strong>Admin 1 :</strong> <span>0812-3190-0339</span></p>
               <p class=""><strong>Admin 2 :</strong> <span>0857-1081-1622</span></p>
               <p><strong>Email:</strong> <span>asolusiagribisnis@gmail.com</span></p>
             </div>
@@ -875,15 +867,12 @@
       var videoModal = document.getElementById('mp4VideoModal');
       var videoElement = document.getElementById('companyVideo');
 
-      // Mendengarkan event ketika modal Bootstrap selesai ditutup
       videoModal.addEventListener('hidden.bs.modal', function () {
-        videoElement.pause(); // Jeda video
-        videoElement.currentTime = 0; // Opsional: kembalikan video ke awal
+        videoElement.pause();
+        videoElement.currentTime = 0;
       });
 
-      const animationDuration = 2000; // Durasi animasi dalam milidetik (2000ms = 2 detik)
-
-      // Fungsi untuk menjalankan animasi hitung
+      const animationDuration = 2000;
       const animateCountUp = (el) => {
         const target = parseInt(el.getAttribute("data-target"));
         const startTime = performance.now();
@@ -892,7 +881,6 @@
           const elapsedTime = currentTime - startTime;
           const progress = Math.min(elapsedTime / animationDuration, 1);
 
-          // Easing: membuat animasi melambat secara elegan saat mendekati angka akhir
           const easeOutQuart = 1 - Math.pow(1 - progress, 4);
 
           const currentCount = Math.floor(easeOutQuart * target);
@@ -901,41 +889,37 @@
           if (progress < 1) {
             requestAnimationFrame(updateCount);
           } else {
-            el.innerText = target; // Memastikan angka akhir pas dengan target
+            el.innerText = target;
           }
         };
 
         requestAnimationFrame(updateCount);
       };
 
-      // Observer untuk mendeteksi kapan section statistik muncul di layar
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Cari semua elemen dengan class 'count-up' di dalam section ini
             const counters = entry.target.querySelectorAll(".count-up");
             counters.forEach(counter => animateCountUp(counter));
 
-            // Hentikan observer agar animasi tidak berulang saat di-scroll naik-turun
             observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.5 }); // threshold 0.5 berarti animasi mulai saat 50% section terlihat
 
-      // Terapkan observer ke section statistik
       const statsSection = document.querySelector("#why-us-stats");
       if (statsSection) {
         observer.observe(statsSection);
       }
+
+      // Batas 100 karakter untuk judul postingan
       const titles = document.querySelectorAll('.post-title');
       const maxLength = 100; // Batas maksimal karakter
 
       titles.forEach(title => {
         const text = title.innerText;
 
-        // Jika teks lebih panjang dari batas maksimal
         if (text.length > maxLength) {
-          // Potong teks dari awal (0) sampai batas maksimal, lalu tambah kata
           title.innerText = text.substring(0, maxLength) + '.. selengkapnya';
         }
       });
